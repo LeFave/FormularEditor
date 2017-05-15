@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane onKeyPressed="#paneKeyPress" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MyController">
+   <center>
+      <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane onKeyPressed="#paneKeyPress" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <StackPane prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <Canvas fx:id="canvas" height="200.0" width="200.0" />
+                        <Pane fx:id="pane" onMouseClicked="#canvasMouseClick" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </StackPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="530.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+                <Tab text="Field">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="ID">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font></Label>
+                              <TextField fx:id="IDText" layoutX="100.0" layoutY="10.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="XText" layoutX="100.0" layoutY="35.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="YText" layoutX="100.0" layoutY="60.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="WidthText" layoutX="100.0" layoutY="85.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="HeightText" layoutX="100.0" layoutY="110.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="TypeText" layoutX="100.0" layoutY="135.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="LabelText" layoutX="100.0" layoutY="160.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <Label layoutX="14.0" layoutY="39.0" text="X" />
+                              <Label layoutX="14.0" layoutY="64.0" text="Y" />
+                              <Label layoutX="14.0" layoutY="89.0" text="Width" />
+                              <Label layoutX="14.0" layoutY="114.0" text="Height" />
+                              <Label layoutX="14.0" layoutY="139.0" text="Type" />
+                              <Label layoutX="14.0" layoutY="164.0" text="Label" />
+                              <CheckBox fx:id="ReadOnlyCheckbox" layoutX="14.0" layoutY="221.0" mnemonicParsing="false" text="readOnly" />
+                              <CheckBox fx:id="WarnIfEmptyCheckbox" layoutX="14.0" layoutY="246.0" mnemonicParsing="false" text="warnIfEmpty" />
+                              <CheckBox fx:id="MandatoryCheckbox" layoutX="14.0" layoutY="271.0" mnemonicParsing="false" text="mandatory" />
+                              <CheckBox fx:id="PrefillIfEditAsNewCheckbox" layoutX="14.0" layoutY="296.0" mnemonicParsing="false" text="prefillIfEditAsNew" />
+                              <TextField fx:id="PrefillText" layoutX="104.0" layoutY="185.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              <Label layoutX="14.0" layoutY="189.0" text="Prefill" />
+                              <CheckBox fx:id="ShowInOverviewCheckbox" layoutX="14.0" layoutY="321.0" mnemonicParsing="false" text="showInOverview" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Tools">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <CheckBox fx:id="MissingPrefillCheckbox" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Mark missing Prefills" />
+                              <CheckBox fx:id="MissingIDCheckbox" layoutX="14.0" layoutY="39.0" mnemonicParsing="false" text="Mark missing IDs" />
+                              <CheckBox fx:id="DuplicateIDCheckbox" layoutX="14.0" layoutY="64.0" mnemonicParsing="false" text="Mark duplicate IDs" />
+                              <CheckBox fx:id="DuplicatePrefillCheckbox" layoutX="14.0" layoutY="89.0" mnemonicParsing="false" text="Mark duplicate Prefills" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Form">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                           	  
+                           	  <Label layoutX="14.0" layoutY="14.0" text="FormType" />
+                              <TextField fx:id="FormTypeText" layoutX="100.0" layoutY="10.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              
+                              <Label layoutX="14.0" layoutY="39.0" text="FormLabel" />
+                              <TextField fx:id="FormLabelText" layoutX="100.0" layoutY="35.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                              
+                              <Label layoutX="14.0" layoutY="64.0" text="FormInfo" />
+                              <TextField fx:id="FormInfoText" layoutX="100.0" layoutY="60.0" prefHeight="25.0" prefWidth="82.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="10.0" />
+                                                            
+                              <CheckBox layoutX="14.0" layoutY="96.0" mnemonicParsing="false" text="xxx" fx:id="xxxCheckbox" />
+                                                            
+                              <CheckBox fx:id="yyyCheckbox" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" text="yyy" />
+                              
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </right>
+   <top>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar layoutX="10.0" prefHeight="40.0" prefWidth="783.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0">
+              <buttons>
+                <Button fx:id="loadImageButton" mnemonicParsing="false" onMouseClicked="#loadImageButtonPressed" text="Load Image" ButtonBar.buttonData="RIGHT" />
+                <Button fx:id="loadXMLButton" mnemonicParsing="false" onMouseClicked="#loadXMLButtonPressed" text="Load XML" ButtonBar.buttonData="RIGHT" />
+                <Button fx:id="saveXMLButton" mnemonicParsing="false" onMouseClicked="#saveXMLButtonPressed" text="Save XML" ButtonBar.buttonData="RIGHT" />
+                <Button fx:id="selectToolButton" mnemonicParsing="false" onMouseClicked="#selectToolButtonPressed" text="Select" ButtonBar.buttonData="LEFT" />
+                <Button fx:id="createToolButton" mnemonicParsing="false" onMouseClicked="#createToolButtonPressed" text="Create" ButtonBar.buttonData="LEFT" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="560.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="textfieldButton" layoutX="10.0" layoutY="5.0" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onMouseClicked="#textfieldButtonPressed" prefWidth="180.0" text="Textfield" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
+            <Button fx:id="textareaButton" layoutX="10.0" layoutY="40.0" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onMouseClicked="#textareaButtonPressed" prefWidth="180.0" text="Textarea" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+            <Button fx:id="checkboxButton" layoutX="10.0" layoutY="75.0" maxWidth="180.0" minWidth="180.0" mnemonicParsing="false" onMouseClicked="#checkboxButtonPressed" prefWidth="180.0" text="Checkbox" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
